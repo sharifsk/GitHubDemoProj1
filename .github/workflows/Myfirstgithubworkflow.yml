@@ -1,13 +1,16 @@
 name: A workflow for my Hello World file
 on:
+  workflow_dispatch:
   push:
-    branches: [ main ]
+    branches: 
+     - main 
     paths:
-      - 'website/**'
+     -'website/**'
   pull_request:
-    branches: [ main ]
+    branches:
+     - main
     paths:
-      - 'website/**'
+     - 'website/**'
 
 jobs:
   build:
