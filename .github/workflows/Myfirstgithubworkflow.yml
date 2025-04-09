@@ -1,0 +1,29 @@
+name: A workflow for my Hello World file
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'website/**'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'website/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run tests
+        run: npm test
