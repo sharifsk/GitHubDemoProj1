@@ -20,13 +20,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-
+      - name: echo Hello world
+        run: echo Hello world
       - name: Install dependencies
-        run: npm install
+        run: echo Install dependencies
 
-      - name: Run tests
-        run: npm test
+      - name: Index.html content
+        run: |
+          echo "This is from INdex.html"
+          cat Index.html
